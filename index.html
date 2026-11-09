@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patitas de vuelta | Simulación EDO</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h2>🐾 Patitas de vuelta</h2>
+            <span>Simulación matemática</span>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <p class="etiqueta">PROYECTO DE MÉTODOS NUMÉRICOS</p>
+
+                <h1>Cada reencuentro<br>cuenta.</h1>
+
+                <p>
+                    Un modelo matemático para comprender cómo
+                    la colaboración comunitaria puede ayudar
+                    a recuperar mascotas extraviadas.
+                </p>
+
+                <a href="#simulador" class="btn">
+                    Iniciar simulación
+                </a>
+            </div>
+        </section>
+    </header>
+
+    <main>
+
+        <section id="problema" class="seccion">
+            <h2>1. El problema y su contexto</h2>
+
+            <p>
+                La pérdida de mascotas representa una preocupación
+                para muchas familias. La difusión de información
+                y la colaboración de vecinos y voluntarios pueden
+                contribuir a su recuperación.
+            </p>
+
+            <p>
+                Este proyecto propone un modelo matemático
+                hipotético para estudiar la evolución de las
+                mascotas recuperadas durante un periodo de tiempo.
+            </p>
+
+            <div class="objetivo">
+                <h3>Objetivo del desafío</h3>
+                <p>
+                    Analizar cuánto tiempo podría necesitar una
+                    comunidad para recuperar al menos el 70 %
+                    de 40 mascotas extraviadas.
+                </p>
+            </div>
+        </section>
+
+        <section id="modelo" class="seccion">
+            <h2>2. Modelo matemático</h2>
+
+            <p>
+                Se utiliza una ecuación diferencial ordinaria
+                de primer orden:
+            </p>
+
+            <div class="formula">
+                dy/dt = k(N - y)
+            </div>
+
+            <div class="formula">
+                y(0) = 5
+            </div>
+
+            <h3>Solución analítica</h3>
+
+            <div class="formula">
+                y(t) = 40 - 35e^(-0.18t)
+            </div>
+
+            
+<div class="demostracion">
+
+    <h3>Desarrollo de la solución analítica</h3>
+
+    <p>Partimos de la ecuación diferencial:</p>
+
+    <div class="formula">
+        dy/dt = k(N - y)
+    </div>
+
+    <p>Sustituimos los parámetros del modelo:</p>
+
+    <div class="formula">
+        dy/dt = 0.18(40 - y)
+    </div>
+
+    <p>Separamos las variables:</p>
+
+    <div class="formula">
+        dy/(40 - y) = 0.18 dt
+    </div>
+
+    <p>Integramos ambos lados:</p>
+
+    <div class="formula">
+        -ln|40 - y| = 0.18t + C
+    </div>
+
+    <p>Despejamos la variable dependiente:</p>
+
+    <div class="formula">
+        y(t) = 40 - C₁e^(-0.18t)
+    </div>
+
+    <p>Aplicamos la condición inicial y(0) = 5:</p>
+
+    <div class="formula">
+        5 = 40 - C₁
+    </div>
+
+    <div class="formula">
+        C₁ = 35
+    </div>
+
+    <p>Obtenemos la solución analítica definitiva:</p>
+
+    <div class="formula">
+        y(t) = 40 - 35e^(-0.18t)
+    </div>
+
+    <h3>Verificación por sustitución</h3>
+
+    <p>Derivamos la solución:</p>
+
+    <div class="formula">
+        y'(t) = 6.3e^(-0.18t)
+    </div>
+
+    <p>Sustituimos en la ecuación diferencial:</p>
+
+    <div class="formula">
+        0.18(40 - y) = 6.3e^(-0.18t)
+    </div>
+
+    <p>
+        La expresión obtenida coincide con la derivada.
+        Por tanto, la solución satisface la ecuación diferencial.
+    </p>
+
+    <p>
+        También se comprueba la condición inicial:
+        y(0) = 40 - 35 = 5.
+    </p>
+
+    <div class="verificacion">
+        ✓ La solución analítica cumple la EDO y la condición inicial.
+    </div>
+
+</div>
+
+
+<div class="demostracion">
+
+    <h3>Variables, parámetros y unidades</h3>
+
+    <div class="tabla-contenedor">
+        <table>
+            <thead>
+                <tr>
+                    <th>Símbolo</th>
+                    <th>Descripción</th>
+                    <th>Unidad</th>
+                    <th>Valor inicial</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>t</td>
+                    <td>Tiempo transcurrido</td>
+                    <td>Días</td>
+                    <td>0</td>
+                </tr>
+
+                <tr>
+                    <td>y(t)</td>
+                    <td>Mascotas recuperadas</td>
+                    <td>Mascotas</td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td>N</td>
+                    <td>Total de mascotas extraviadas</td>
+                    <td>Mascotas</td>
+                    <td>40</td>
+                </tr>
+
+                <tr>
+                    <td>k</td>
+                    <td>Tasa de recuperación</td>
+                    <td>Día⁻¹</td>
+                    <td>0.18</td>
+                </tr>
+
+                <tr>
+                    <td>y₀</td>
+                    <td>Recuperadas inicialmente</td>
+                    <td>Mascotas</td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td>h</td>
+                    <td>Tamaño de paso numérico</td>
+                    <td>Días</td>
+                    <td>0.5 y 0.25</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Supuestos del modelo</h3>
+
+    <ul>
+        <li>Se considera una población inicial fija de 40 mascotas extraviadas.</li>
+        <li>La tasa de recuperación se mantiene constante durante la simulación.</li>
+        <li>La recuperación depende de la cantidad de mascotas que todavía no han sido recuperadas.</li>
+        <li>Se supone que no ingresan nuevas mascotas extraviadas al sistema.</li>
+        <li>Los parámetros son hipotéticos y se utilizan con fines académicos.</li>
+    </ul>
+
+    <h3>Alcances y limitaciones</h3>
+
+    <p>
+        El modelo permite estudiar una posible evolución de las
+        recuperaciones, pero no representa todos los factores
+        reales de una búsqueda comunitaria.
+    </p>
+
+    <p>
+        La participación de voluntarios, la difusión de avisos,
+        la ubicación de las mascotas y las condiciones del entorno
+        pueden modificar la tasa de recuperación.
+    </p>
+
+</div>
+
+<div class="demostracion">
+
+    <h3>Fórmulas de los métodos numéricos</h3>
+
+    <h4>Método de Heun (RK2)</h4>
+
+    <p>Primera pendiente:</p>
+
+    <div class="formula">
+        K₁ = f(tₙ, yₙ)
+    </div>
+
+    <p>Segunda pendiente:</p>
+
+    <div class="formula">
+        K₂ = f(tₙ + h, yₙ + hK₁)
+    </div>
+
+    <p>Actualización:</p>
+
+    <div class="formula">
+        yₙ₊₁ = yₙ + (h/2)(K₁ + K₂)
+    </div>
+
+    <h4>Método Runge-Kutta de cuarto orden (RK4)</h4>
+
+    <div class="formula">
+        K₁ = f(tₙ, yₙ)
+    </div>
+
+    <div class="formula">
+        K₂ = f(tₙ + h/2, yₙ + hK₁/2)
+    </div>
+
+    <div class="formula">
+        K₃ = f(tₙ + h/2, yₙ + hK₂/2)
+    </div>
+
+    <div class="formula">
+        K₄ = f(tₙ + h, yₙ + hK₃)
+    </div>
+
+    <p>Actualización final:</p>
+
+    <div class="formula">
+        yₙ₊₁ = yₙ + (h/6)(K₁ + 2K₂ + 2K₃ + K₄)
+    </div>
+
+</div>
+
+            <p>
+                La solución analítica permitirá comparar
+                la precisión de los métodos numéricos.
+            </p>
+
+            <h3>Parámetros del modelo</h3>
+
+            <div id="parametros"></div>
+        </section>
+
+        <section id="simulador" class="seccion">
+            <h2>3. Simulador interactivo</h2>
+
+            <p>
+                Modifica los parámetros y ejecuta los métodos
+                numéricos para observar los resultados.
+            </p>
+
+            <div class="controles">
+                <label>
+                    Cantidad inicial de mascotas (N):
+                    <input type="number" id="N" value="40" min="1">
+                </label>
+
+                <label>
+                    Mascotas recuperadas inicialmente (y₀):
+                    <input type="number" id="y0" value="5" min="0">
+                </label>
+
+                <label>
+                    Tasa de recuperación (k):
+                    <input type="number" id="k" value="0.18" step="0.01">
+                </label>
+
+                <label>
+                    Tiempo de simulación (días):
+                    <input type="number" id="tiempo" value="14" min="1">
+                </label>
+
+                <label>
+                    Primer tamaño de paso (h₁):
+                    <input type="number" id="h1" value="0.5" step="0.05">
+                </label>
+
+                <label>
+                    Segundo tamaño de paso (h₂):
+                    <input type="number" id="h2" value="0.25" step="0.05">
+                </label>
+            </div>
+
+            <button id="ejecutar" class="btn">
+                Ejecutar simulación
+            </button>
+
+            <div id="mensaje"></div>
+
+            <div id="resultados"></div>
+
+        </section>
+
+        <section id="grafico" class="seccion">
+            <h2>4. Gráfico comparativo</h2>
+
+            <p>
+                Comparación de la solución analítica,
+                el método de Heun y el método RK4.
+            </p>
+
+            <div class="grafico-container">
+                <canvas id="grafica"></canvas>
+            </div>
+        </section>
+
+        <section id="errores" class="seccion">
+            <h2>5. Análisis de errores</h2>
+            <div id="tablaErrores"></div>
+        </section>
+
+        <section id="interpretacion" class="seccion">
+            <h2>6. Interpretación de resultados</h2>
+            <div id="conclusiones"></div>
+        </section>
+
+<section id="conclusionesFinales" class="seccion">
+
+    <h2>7. Conclusiones y referencias</h2>
+
+    <h3>Conclusiones</h3>
+
+    <p>
+        <strong>1. Aplicación de las ecuaciones diferenciales:</strong>
+        Se desarrolló un modelo matemático mediante una ecuación
+        diferencial ordinaria de primer orden para representar
+        la evolución hipotética de las mascotas recuperadas
+        en una comunidad.
+    </p>
+
+    <p>
+        <strong>2. Solución analítica:</strong>
+        Se obtuvo la solución exacta del modelo aplicando
+        separación de variables e incorporando la condición
+        inicial. Esta solución permitió establecer un valor
+        de referencia para evaluar los métodos numéricos.
+    </p>
+
+    <p>
+        <strong>3. Comparación de métodos:</strong>
+        Los métodos de Heun y Runge-Kutta de cuarto orden
+        proporcionaron aproximaciones a la solución analítica.
+        RK4 presentó mayor precisión que Heun en los tamaños
+        de paso evaluados.
+    </p>
+
+    <p>
+        <strong>4. Influencia del tamaño de paso:</strong>
+        Se comprobó que reducir el tamaño del paso mejora
+        la precisión de ambos métodos. Esto demuestra la
+        importancia de seleccionar adecuadamente el paso
+        de integración en la resolución numérica de
+        ecuaciones diferenciales.
+    </p>
+
+    <p>
+        <strong>5. Importancia y limitaciones del modelo:</strong>
+        El proyecto demuestra cómo los métodos numéricos
+        pueden utilizarse para estudiar problemas de interés
+        comunitario. Sin embargo, los parámetros son
+        hipotéticos y el modelo no contempla todos los
+        factores que intervienen en la recuperación real
+        de mascotas.
+    </p>
+
+    <h3>Referencias bibliográficas</h3>
+
+    <ol>
+        <li>
+            Chapra, S. C., &amp; Canale, R. P. (2015).
+            <em>Métodos numéricos para ingenieros</em>
+            (7.ª ed.). McGraw-Hill Education.
+        </li>
+
+        <li>
+            Burden, R. L., &amp; Faires, J. D. (2011).
+            <em>Numerical Analysis</em>
+            (9th ed.). Brooks/Cole, Cengage Learning.
+        </li>
+
+        <li>
+            Boyce, W. E., DiPrima, R. C., &amp; Meade, D. B.
+            (2017). <em>Elementary Differential Equations and
+            Boundary Value Problems</em> (11th ed.).
+            Wiley.
+        </li>
+    </ol>
+
+    <h3>Nota sobre los resultados</h3>
+
+    <p>
+        Los valores utilizados en la simulación son
+        hipotéticos y tienen fines exclusivamente académicos.
+        Los resultados representan el comportamiento
+        matemático del modelo y no constituyen predicciones
+        estadísticas de recuperación de mascotas.
+    </p>
+
+</section>
+
+    </main>
+
+    <footer>
+        <p>
+            Patitas de vuelta 🐾
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

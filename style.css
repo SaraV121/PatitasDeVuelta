@@ -1,0 +1,369 @@
+
+/* =====================================
+   PATITAS DE VUELTA
+   Diseño principal de la aplicación
+===================================== */
+
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f9f7;
+    color: #293b35;
+    line-height: 1.7;
+}
+
+/* Barra de navegación */
+.navbar {
+    background: #173d35;
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    font-size: 23px;
+}
+
+.navbar span {
+    font-size: 14px;
+    color: #c6ded1;
+}
+
+/* Portada */
+.hero {
+    min-height: 440px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(16, 48, 40, 0.95),
+            rgba(16, 48, 40, 0.55)
+        ),
+        url("https://images.unsplash.com/photo-1552053831-71594a27632d?w=1600")
+        center/cover;
+
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.etiqueta {
+    color: #a9d5bb;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero-content > p:not(.etiqueta) {
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    background: #b7d9bd;
+    color: #173d35;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #91c5a0;
+    transform: translateY(-2px);
+}
+
+/* Secciones */
+.seccion {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+}
+
+.seccion h2 {
+    color: #245c49;
+    font-size: 27px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dcece0;
+    padding-bottom: 12px;
+}
+
+.seccion h3 {
+    color: #376b56;
+    margin: 20px 0 10px;
+}
+
+.seccion p {
+    margin-bottom: 15px;
+    color: #52625b;
+}
+
+/* Objetivo */
+.objetivo {
+    background: #edf6ef;
+    border-left: 5px solid #4b956b;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+.objetivo h3 {
+    margin-top: 0;
+}
+
+/* Fórmulas */
+.formula {
+    background: #edf5ef;
+    color: #20523f;
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+    padding: 20px;
+    margin: 18px 0;
+    border-radius: 8px;
+    font-family: Georgia, serif;
+}
+
+/* Parámetros */
+#parametros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* Controles del simulador */
+.controles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.controles label {
+    font-weight: 600;
+    color: #365c4b;
+    font-size: 14px;
+}
+
+.controles input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd9cf;
+    border-radius: 7px;
+    margin-top: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.controles input:focus {
+    border-color: #4b956b;
+    box-shadow: 0 0 0 3px rgba(75,149,107,0.12);
+}
+
+#ejecutar {
+    margin-top: 10px;
+}
+
+/* Mensajes */
+#mensaje {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.error {
+    color: #c0392b;
+    background: #fcebea;
+    padding: 12px;
+    border-radius: 7px;
+}
+
+.exito {
+    color: #26734d;
+    background: #e9f6ed;
+    padding: 12px;
+    border-radius: 7px;
+}
+
+/* Resultados */
+.resultado-card {
+    background: #edf6ef;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.resultado-card h3 {
+    margin-top: 0;
+}
+
+/* Tablas */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 650px;
+}
+
+th {
+    background: #245c49;
+    color: white;
+    padding: 13px;
+    text-align: center;
+}
+
+td {
+    padding: 11px;
+    text-align: center;
+    border-bottom: 1px solid #e2eae4;
+}
+
+tr:nth-child(even) {
+    background: #f2f7f3;
+}
+
+/* Gráficos */
+.grafico-container {
+    width: 100%;
+    min-height: 350px;
+    position: relative;
+    margin-top: 25px;
+}
+
+/* Conclusiones */
+.conclusion-item {
+    background: #f0f6f1;
+    border-radius: 8px;
+    padding: 18px;
+    margin: 12px 0;
+}
+
+/* Video */
+#videoContenido {
+    background: #edf5ef;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Pie de página */
+footer {
+    background: #173d35;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 45px 7%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .seccion {
+        margin: 20px 12px;
+        padding: 22px;
+    }
+
+    .controles {
+        grid-template-columns: 1fr;
+    }
+
+    #parametros {
+        grid-template-columns: 1fr;
+    }
+
+    
+/* FUNDAMENTACIÓN MATEMÁTICA */
+
+.demostracion {
+    background: #fbfdfb;
+    border: 1px solid #dce9df;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px 0;
+}
+
+.demostracion h3 {
+    color: #245c49;
+    font-size: 21px;
+    margin: 25px 0 15px;
+}
+
+.demostracion h3:first-child {
+    margin-top: 0;
+}
+
+.demostracion h4 {
+    color: #477b60;
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+
+.demostracion ul {
+    padding-left: 25px;
+    color: #52625b;
+}
+
+.demostracion li {
+    margin-bottom: 10px;
+}
+
+.verificacion {
+    background: #e8f5ec;
+    color: #26734d;
+    border-left: 5px solid #4b956b;
+    padding: 17px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+}
