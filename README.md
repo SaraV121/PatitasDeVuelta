@@ -167,7 +167,7 @@ El modelo considera los siguientes supuestos:
 
 El modelo no representa todos los factores que intervienen en una búsqueda real, como la participación de voluntarios, la difusión de avisos, la ubicación de las mascotas y las condiciones del entorno.
 
-## 10. Conclusiones
+## 9. Conclusiones
 
 El proyecto demuestra la aplicación de ecuaciones diferenciales ordinarias de primer orden en un problema de beneficio comunitario.
 
