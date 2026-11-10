@@ -18,8 +18,6 @@ function funcion(t, y, N, k) {
 
 }
 
-
-
 function metodoHeun(N, y0, k, tiempo, h) {
 
     let resultados = [];
@@ -34,16 +32,11 @@ function metodoHeun(N, y0, k, tiempo, h) {
 
     while (t < tiempo - 1e-10) {
 
-        // Ajustar el último paso si es necesario
         let paso = Math.min(h, tiempo - t);
 
-        // Primera pendiente
         let k1 = funcion(t, y, N, k);
-
-        // Predicción de Euler
         let yPredictor = y + paso * k1;
 
-        // Segunda pendiente
         let k2 = funcion(
             t + paso,
             yPredictor,
@@ -67,10 +60,6 @@ function metodoHeun(N, y0, k, tiempo, h) {
 }
 
 
-// =====================================================
-// 4. MÉTODO RUNGE-KUTTA DE CUARTO ORDEN (RK4)
-// =====================================================
-
 function metodoRK4(N, y0, k, tiempo, h) {
 
     let resultados = [];
@@ -87,7 +76,6 @@ function metodoRK4(N, y0, k, tiempo, h) {
 
         let paso = Math.min(h, tiempo - t);
 
-        // Cuatro pendientes
         let k1 = funcion(t, y, N, k);
 
         let k2 = funcion(
@@ -111,7 +99,6 @@ function metodoRK4(N, y0, k, tiempo, h) {
             k
         );
 
-        // Actualización de RK4
         y = y + (paso / 6) *
             (k1 + 2 * k2 + 2 * k3 + k4);
 
@@ -129,9 +116,6 @@ function metodoRK4(N, y0, k, tiempo, h) {
 }
 
 
-// =====================================================
-// 5. CÁLCULO DE ERRORES
-// =====================================================
 
 function calcularError(exacto, aproximado) {
 
@@ -157,10 +141,6 @@ function calcularError(exacto, aproximado) {
 
 }
 
-
-// =====================================================
-// 6. FORMATO DE NÚMEROS
-// =====================================================
 
 function formato(valor) {
 
@@ -256,10 +236,6 @@ function obtenerParametros() {
 }
 
 
-// =====================================================
-// 8. TABLA COMPARATIVA
-// =====================================================
-
 function crearTabla(heun, rk4, parametros, nombre) {
 
     let html = `
@@ -343,10 +319,6 @@ function crearTabla(heun, rk4, parametros, nombre) {
 }
 
 
-// =====================================================
-// 9. DATOS DEL MODELO
-// =====================================================
-
 function mostrarParametros(p) {
 
     document.getElementById("parametros").innerHTML = `
@@ -380,9 +352,6 @@ function mostrarParametros(p) {
 }
 
 
-// =====================================================
-// 10. RESULTADOS FINALES
-// =====================================================
 
 function mostrarResultados(p, heun1, rk41, heun2, rk42) {
 
@@ -495,10 +464,6 @@ function mostrarResultados(p, heun1, rk41, heun2, rk42) {
 
 }
 
-
-// =====================================================
-// 11. GRÁFICO COMPARATIVO
-// =====================================================
 
 function mostrarGrafica(p, heun1, rk41, heun2, rk42) {
 
@@ -659,10 +624,6 @@ function mostrarGrafica(p, heun1, rk41, heun2, rk42) {
 }
 
 
-// =====================================================
-// 12. TABLA DE ERRORES
-// =====================================================
-
 function mostrarErrores(p, heun1, rk41, heun2, rk42) {
 
     let datos = [
@@ -743,10 +704,6 @@ function mostrarErrores(p, heun1, rk41, heun2, rk42) {
 
 }
 
-
-// =====================================================
-// 13. INTERPRETACIÓN AUTOMÁTICA
-// =====================================================
 
 function mostrarInterpretacion(p, heun1, rk41, heun2, rk42) {
 
@@ -849,20 +806,14 @@ function mostrarInterpretacion(p, heun1, rk41, heun2, rk42) {
 }
 
 
-// =====================================================
-// 14. EJECUCIÓN COMPLETA
-// =====================================================
-
 function ejecutarSimulacion() {
 
     let mensaje = document.getElementById("mensaje");
 
     try {
 
-        // Leer y validar entradas
         let p = obtenerParametros();
 
-        // Ejecutar Heun con ambos tamaños de paso
         let heun1 = metodoHeun(
             p.N, p.y0, p.k, p.tiempo, p.h1
         );
@@ -871,7 +822,6 @@ function ejecutarSimulacion() {
             p.N, p.y0, p.k, p.tiempo, p.h2
         );
 
-        // Ejecutar RK4 con ambos tamaños de paso
         let rk41 = metodoRK4(
             p.N, p.y0, p.k, p.tiempo, p.h1
         );
@@ -880,7 +830,6 @@ function ejecutarSimulacion() {
             p.N, p.y0, p.k, p.tiempo, p.h2
         );
 
-        // Comprobar que las mallas coincidan
         let mallasCoinciden = (a, b) => {
 
             return a.length === b.length &&
@@ -945,7 +894,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("ejecutar")
         .addEventListener("click", ejecutarSimulacion);
 
-    // Primera ejecución automática
     ejecutarSimulacion();
 
 });
