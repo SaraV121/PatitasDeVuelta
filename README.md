@@ -155,33 +155,7 @@ PatitasDeVuelta/
 - `script.js`: contiene los cálculos, métodos numéricos, validaciones y generación de resultados.
 - `README.md`: documentación del proyecto.
 
-## 8. Instrucciones de ejecución
-
-### Opción 1. Desde la página publicada
-
-1. Ingresar al siguiente enlace:
-
-   https://sarav121.github.io/PatitasDeVuelta/
-
-2. Desplazarse hasta la sección del simulador.
-3. Modificar los parámetros si se desea.
-4. Presionar el botón **Ejecutar simulación**.
-5. Consultar las tablas, gráficos y resultados obtenidos.
-
-### Opción 2. Desde el repositorio
-
-1. Ingresar al repositorio de GitHub:
-
-   https://github.com/SaraV121/PatitasDeVuelta
-
-2. Descargar el proyecto mediante la opción **Code → Download ZIP**.
-3. Extraer los archivos.
-4. Abrir la carpeta del proyecto.
-5. Ejecutar el archivo `index.html` en un navegador web.
-
-No se requiere instalar un servidor ni configurar dependencias locales. Se necesita conexión a Internet para cargar la biblioteca Chart.js desde su CDN.
-
-## 9. Supuestos y limitaciones
+## 8. Supuestos y limitaciones
 
 El modelo considera los siguientes supuestos:
 
