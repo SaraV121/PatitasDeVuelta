@@ -150,11 +150,6 @@ PatitasDeVuelta/
 └── README.md
 ```
 
-- `index.html`: contiene la estructura y el contenido de la aplicación.
-- `style.css`: contiene los estilos visuales.
-- `script.js`: contiene los cálculos, métodos numéricos, validaciones y generación de resultados.
-- `README.md`: documentación del proyecto.
-
 ## 8. Supuestos y limitaciones
 
 El modelo considera los siguientes supuestos:
