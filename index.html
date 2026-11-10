@@ -389,6 +389,42 @@
         <section id="interpretacion" class="seccion">
             <h2>6. Interpretación de resultados</h2>
             <div id="conclusiones"></div>
+
+            <h3>¿Por qué RK4 obtiene menor error que Heun?</h3>
+
+    <p>
+        El método de Heun es un método numérico de segundo orden,
+        cuyo error global es proporcional a h². Por otra parte,
+        el método Runge-Kutta de cuarto orden (RK4) tiene un
+        error global proporcional a h⁴.
+    </p>
+
+    <p>
+        Esto significa que RK4 utiliza cuatro evaluaciones de
+        la pendiente en cada paso, logrando una aproximación
+        más precisa de la solución de la ecuación diferencial.
+    </p>
+
+    <p>
+        En el modelo de recuperación de mascotas, ambos métodos
+        se comparan con la solución analítica exacta:
+    </p>
+
+    <p>
+        y(t) = 40 - 35e^(-0.18t)
+    </p>
+
+    <p>
+        Al utilizar el mismo tamaño de paso, RK4 generalmente
+        presenta un error menor que Heun. Además, cuando se
+        reduce el tamaño de paso de h = 0.5 a h = 0.25,
+        los errores de ambos métodos disminuyen.
+    </p>
+
+    <p>
+        Por lo tanto, RK4 resulta más preciso para este problema,
+        aunque requiere más evaluaciones de la función en cada paso.
+    </p>
         </section>
 
 <section id="conclusionesFinales" class="seccion">
